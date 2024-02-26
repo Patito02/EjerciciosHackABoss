@@ -8,12 +8,12 @@ public class Verdura {
     public Verdura() {
     }
 
-    public Verdura(int id, String nombre, String color, int calorias, boolean debeCocinarse) {
+    public Verdura(int id, String nombre, String color, int calorias) {
         this.id = id;
         this.nombre = nombre;
         this.color = color;
         this.calorias = calorias;
-        this.debeCocinarse = debeCocinarse;
+        this.debeCocinarse = false;
     }
 
     public int getId() {
