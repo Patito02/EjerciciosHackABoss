@@ -1,0 +1,23 @@
+En este informe se documenta el desarrollo del programa solicitado. 
+Sus funcionalidades incluyen:
+-	La creación de una lista de verduras guardadas en un vector con el detalle de sus 
+atributos individuales.
+-	La impresión por pantalla de esa lista de verduras y sus calorías.
+-	Luego de cambiar los datos de 2 verduras de la lista, imprimir por pantalla el antes 
+y el después de los cambios.
+-	Imprimir por pantalla solo las verduras de la lista que sean de color verde.
+
+Las pruebas fueron realizadas por los testers. Estas pruebas se realizaron para verificar 
+el correcto funcionamiento del programa solicitado. 
+Algunas de las pruebas realizadas fueron: 
+-	Cambiar la posición entre las distintas verduras para comprobar en la impresión por 
+pantalla si se realizaban los cambios.
+-	Verificar que existan verduras del color solicitado y que las muestre por pantalla.
+-	En el caso de que no encuentre ninguna verdura de ese color avisarle al usuario a través 
+de un mensaje por consola.
+
+Los resultados arrojaron que el programa funciona correctamente en la impresión por pantalla 
+de los resultados, en los cambios realizados en los datos almacenados y en el filtrado de la 
+información solicitada, así como también en el proceso de informale al usuario los resultados 
+de la búsqueda. Se optimizó el código para poder realizar la búsqueda por color teniendo que 
+cambiar el dato en un único campo, y la aplicación sigue funcionando sin problemas.
