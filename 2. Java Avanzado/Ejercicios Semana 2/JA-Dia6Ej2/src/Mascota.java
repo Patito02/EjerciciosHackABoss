@@ -2,9 +2,10 @@ public class Mascota <T>{
     private int id;
     private String nombre;
     private int edad;
-    private String especie;
+    private T especie;
 
-    public Mascota(int id, String nombre, int edad, String especie) {
+
+    public Mascota(int id, String nombre, int edad, T especie) {
         this.id = id;
         this.nombre = nombre;
         this.edad = edad;
@@ -23,7 +24,7 @@ public class Mascota <T>{
         return edad;
     }
 
-    public String getEspecie() {
+    public T getEspecie() {
         return especie;
     }
 

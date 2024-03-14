@@ -2,57 +2,57 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class RegistroMascotas<T extends Mascota> {
-    List<T> listaMascotas;
+public class RegistroMascotas{
+    List<Mascota<?>> listaMascotas;
 
     public RegistroMascotas() {
         this.listaMascotas = new ArrayList<>();
     }
 
-    public void agregarMascotas(T mascota){
+    public void agregarMascotas(Mascota<?> mascota){
         listaMascotas.add(mascota);
         //System.out.println("Se agregó la mascota correctamente");
     }
-    public void buscarNombre(String nombre){
-        int contador=0;
-        System.out.println("\nNombre buscado: "+nombre);
-        for(T masco:listaMascotas){
+    public <T> List<Mascota<?>> buscarNombre(String nombre){
+        List<Mascota<?>> listadoNombres = new ArrayList<>();
+        for(Mascota<?> masco:listaMascotas){
             if(masco.getNombre().equalsIgnoreCase(nombre)){
-                System.out.println(masco.toString());
-                contador++;
+                listadoNombres.add(masco);
             }
         }
-        if(contador==0){
-            System.out.println("No hay mascotas con el nombre buscado.");
-        }
+        System.out.println("\nListado de nombres: \n"+listadoNombres);
+        return listadoNombres;
     }
-    public void buscarEspecie(String especie){
-        int contador=0;
-        System.out.println("\nEspecie buscada: "+especie);
-        for(T masco:listaMascotas){
-            if(masco.getEspecie().equalsIgnoreCase(especie)){
-                System.out.println(masco.toString());
-                contador++;
+    public <T> List<Mascota<?>> buscarEspecie(T especie){
+        List<Mascota<?>> listadoEspecies = new ArrayList<>();
+        for(Mascota<?> masco:listaMascotas){
+            if(masco.getEspecie()==especie){
+                listadoEspecies.add(masco);
             }
         }
-        if(contador==0){
-            System.out.println("No hay mascotas de la especie buscada.");
-        }
+        System.out.println("\nListado de especies: \n"+listadoEspecies);
+        return listadoEspecies;
     }
-    public void contarMascotas(){
+    public int contarMascotas(){
         int total = listaMascotas.size();
         System.out.println("\nEl total de mascotas registradas es: "+total);
+        return total;
     }
-    public void datosAleatorios(){
+    public Mascota<?> datosAleatorios(){
         System.out.println("\nDatos aleatorios de especie, nombre y edad");
+
         List<String> especies= Arrays.asList("Perro","Gato","Ave","Reptil","Pez");
-        int esp = (int)(Math.random()*5);
-        System.out.println("Especie: "+especies.get(esp));
+        int esp = (int)(Math.random()* especies.size());
+
         List<String> nombres= Arrays.asList("Cloe","Milo","Rocco","Leo","Danna","Sultan","Cash","Fito","Candela","Rex","Titan","Kayla","Misha","Zoe");
-        int nom = (int)(Math.random()*14);
-        System.out.println("Nombre: "+nombres.get(nom));
-        List<Integer> edades= Arrays.asList(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20);
-        int ed = (int)(Math.random()*20);
-        System.out.println("Edad: "+edades.get(ed));
+        int nom = (int)(Math.random()* nombres.size());
+
+        List<Integer> edades= Arrays.asList(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15);
+        int ed = (int)(Math.random()*edades.size());
+
+        System.out.println(new Mascota<>(listaMascotas.size()+1, nombres.get(nom), ed, especies.get(esp)));
+
+        return new Mascota<>(listaMascotas.size()+1, nombres.get(nom), ed, especies.get(esp));
+
     }
 }
