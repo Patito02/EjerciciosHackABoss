@@ -1,0 +1,11 @@
+com\hackaboss\votacion\servlets\SvVoto.class
+com\hackaboss\votacion\persistencia\ControladoraPersistencia.class
+com\hackaboss\votacion\persistencia\exceptions\PreexistingEntityException.class
+com\hackaboss\votacion\logica\Controladora.class
+com\hackaboss\votacion\logica\Voto_.class
+com\hackaboss\votacion\persistencia\exceptions\IllegalOrphanException.class
+com\hackaboss\votacion\persistencia\VotoJpaController.class
+com\hackaboss\votacion\JakartaRestConfiguration.class
+com\hackaboss\votacion\logica\Voto.class
+com\hackaboss\votacion\persistencia\exceptions\NonexistentEntityException.class
+com\hackaboss\votacion\resources\JakartaEE8Resource.class
