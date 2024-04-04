@@ -1,0 +1,75 @@
+{
+	"info": {
+		"_postman_id": "aabb72c9-eb4f-4eec-90fe-46fa05d2036a",
+		"name": "GestionEventosAcademicos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10353761"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/evento",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titulo\": \"Conferencia de Ciencias Computacionales\",\r\n  \"descripcion\": \"Una conferencia sobre los avances en inteligencia artificial y aprendizaje automático.\",\r\n  \"fecha\": \"2023-12-15\",\r\n  \"hora\": \"10:00\",\r\n  \"lugar\": \"Aula Magna Centro del Conocimiento\",\r\n  \"ponente\": \"Dr. Esteban Madrazzo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/evento",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"evento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/evento/eventos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/evento/eventos",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"evento",
+						"eventos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/evento/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/evento/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"evento",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
