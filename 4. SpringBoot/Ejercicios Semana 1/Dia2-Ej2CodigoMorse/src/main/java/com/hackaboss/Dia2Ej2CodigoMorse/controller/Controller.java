@@ -5,10 +5,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.AbstractMap;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 public class Controller {
+
     List<Caracter> codigo = List.of(new Caracter(1,"A","·-"),
             new Caracter(2,"B","-···"),
             new Caracter(3,"C","-·-·"),
@@ -62,5 +66,24 @@ public class Controller {
         return "El cifrado es: "+cifrado;
     }
 
+    // ejercicio extra del coding rooms. En el navegador no se ven los 3 espacios entre palabras,
+    //pero en el postman sí se ven
+    @GetMapping("/extra/{frase}")
+    public String cifrarFrase(@PathVariable String frase){
+        String cifrado ="";
+        for(int i=0; i<frase.length(); i++){
+            String caracter = String.valueOf(frase.charAt(i));
+            if (caracter.equalsIgnoreCase(" ")){
+                cifrado = cifrado + "  ";
+            } else {
+                for(Caracter car: codigo){
+                    if (car.getDefinicion().equalsIgnoreCase(caracter)) {
+                        cifrado = cifrado + " " + car.getCodigo();
+                    }
+                }
+            }
+        }
+        return "El cifrado es: "+cifrado;
+    }
 
 }
