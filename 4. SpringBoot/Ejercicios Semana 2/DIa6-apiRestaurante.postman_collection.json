@@ -1,0 +1,77 @@
+{
+	"info": {
+		"_postman_id": "55852420-75e2-4558-8444-cc1d3ed16c7b",
+		"name": "DIa6-apiRestaurante",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10353761"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/ingredientes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/ingredientes",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ingredientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/platos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/platos",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"platos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/verPlato/arroz con pollo",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"id\": 1,\r\n        \"nombre\": \"Spaghetti a la bolognesa\",\r\n        \"ingredientes\": [7, 4, 6, 1, 9, 27]\r\n    },\r\n    {\r\n        \"id\": 2,\r\n        \"nombre\": \"Ensalada César\",\r\n        \"ingredientes\": [15, 13, 11, 28, 6]\r\n    },\r\n    {\r\n        \"id\": 3,\r\n        \"nombre\": \"Arroz con pollo\",\r\n        \"ingredientes\": [8, 5, 1, 9, 27]\r\n    },\r\n    {\r\n        \"id\": 4,\r\n        \"nombre\": \"Tacos de carne asada\",\r\n        \"ingredientes\": [6, 3, 21, 17, 27]\r\n    },\r\n    {\r\n        \"id\": 5,\r\n        \"nombre\": \"Pizza Margarita\",\r\n        \"ingredientes\": [14, 4, 13, 9, 22]\r\n    },\r\n\t{\r\n        \"id\": 6,\r\n        \"nombre\": \"Hamburguesa clásica\",\r\n        \"ingredientes\": [2, 3, 18, 19, 24]\r\n    },\r\n    {\r\n        \"id\": 7,\r\n        \"nombre\": \"Sushi variado\",\r\n        \"ingredientes\": [20, 23, 25, 26, 29]\r\n    },\r\n    {\r\n        \"id\": 8,\r\n        \"nombre\": \"Enchiladas verdes\",\r\n        \"ingredientes\": [3, 6, 9, 11, 17]\r\n    },\r\n    {\r\n        \"id\": 9,\r\n        \"nombre\": \"Pasta Alfredo\",\r\n        \"ingredientes\": [7, 4, 6, 1, 10]\r\n    },\r\n    {\r\n        \"id\": 10,\r\n        \"nombre\": \"Ensalada de frutas\",\r\n        \"ingredientes\": [12, 16, 30, 13, 11]\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/verPlato/arroz con pollo",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"verPlato",
+						"arroz con pollo"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
