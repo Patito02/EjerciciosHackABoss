@@ -1,0 +1,181 @@
+{
+	"info": {
+		"_postman_id": "a91f8d85-9ff5-44b3-bfcd-2a1b8fa7592c",
+		"name": "Dia9-estudianteProgramacion",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10353761"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/cursos/crear",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idCurso\":5,\r\n    \"nombre\": \"Curso Java Basico\",\r\n    \"tipoCurso\" : \"presencial\",\r\n    \"fechaFinalizacion\" : \"02/04/2024\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/cursos/crear",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cursos",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/temas/crear",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idTema\" : 3,\r\n    \"nombre\" : \"Tema 3\",\r\n    \"descripcion\" : \"Descripcion tema 3\",\r\n     \"curso\" : {\"idCurso\":3}\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/temas/crear",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"temas",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/cursos/lista",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/cursos/lista",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cursos",
+						"lista"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/cursos/temas/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/cursos/temas/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cursos",
+						"temas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/cursos/buscar/java",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/cursos/buscar/java",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cursos",
+						"buscar",
+						"java"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/temas/editar",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idTema\" : 2,\r\n    \"nombre\" : \"Tema 2\",\r\n    \"descripcion\" : \"Descripcion tema 2\",\r\n     \"curso\" : {\"idCurso\":2}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/temas/editar",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"temas",
+						"editar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/cursos/editar",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idCurso\":1,\r\n    \"nombre\": \"Curso Spring Boot\",\r\n    \"tipoCurso\" : \"online\",\r\n    \"fechaFinalizacion\" : \"30/05/2024\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/cursos/editar",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cursos",
+						"editar"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
