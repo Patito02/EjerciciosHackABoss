@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class CursoService implements ICursoService{
@@ -50,20 +51,16 @@ public class CursoService implements ICursoService{
         return toCursoTemaDTO(curso);
     }
 
-
     @Override
     public List<CursoDTO> findCursoJava() {
         String java = "Java";
 
         List<Curso> lista = cursoRepo.findAll();
-        List<Curso> buscados = new ArrayList<>();
 
         //busco los cursos con palabra Java y los agrego a lista de buscados
-        for(Curso cur: lista){
-            if(cur.getNombre().contains(java)){
-                buscados.add(cur);
-            }
-        }
+        List<Curso> buscados = lista.stream()
+                .filter(c->c.getNombre().contains(java))
+                .collect(Collectors.toList());
 
         return toListaCursoDTO(buscados);
     }
@@ -72,30 +69,24 @@ public class CursoService implements ICursoService{
     private List<CursoDTO> toListaCursoDTO(List<Curso> lista){
         List<CursoDTO> listaDTO= new ArrayList<>();
 
-        for(Curso cur: lista){
-
+        lista.forEach(cur -> {
             CursoDTO cursoDTO = new CursoDTO();
             cursoDTO.setNombre(cur.getNombre());
             cursoDTO.setTipoCurso(cur.getTipoCurso());
             cursoDTO.setFechaFinalizacion(cur.getFechaFinalizacion());
-
             listaDTO.add(cursoDTO);
-        }
+        });
         return listaDTO;
     }
 
     private CursoTemaDTO toCursoTemaDTO(Curso curso){
 
-        CursoTemaDTO cursoTemaDTO = new CursoTemaDTO();
-        List<String> listaTemasDTO= new ArrayList<>();
         List<Tema> listaTemas= curso.getListaTemas();
 
-        cursoTemaDTO.setNombre(curso.getNombre());
+        List<String> listaTemasDTO = listaTemas.stream()
+                .map(Tema::getNombre)
+                .collect(Collectors.toList());
 
-        for(Tema tem: listaTemas){
-            listaTemasDTO.add(tem.getNombre());
-        }
-        cursoTemaDTO.setListaTemas(listaTemasDTO);
-        return cursoTemaDTO;
+        return new CursoTemaDTO(curso.getNombre(),listaTemasDTO);
     }
 }
